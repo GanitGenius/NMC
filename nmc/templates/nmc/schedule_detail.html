@@ -1,0 +1,14 @@
+{% extends "nmc/base.html" %}
+{% block content %}
+<div class="media-body">
+
+    <h4>Showing One Schedule:</h4>
+    <span>{{ object.hr }} : {{object.mn}}</span>
+    {% if object.uid == user %}
+    <div>
+        <a class="btn btn-secondary btn-sm mt-1" href="{% url 'sch-update' object.id %}">Update</a>
+        <a class="btn btn-danger btn-sm mt-1" href="{% url 'sch-delete' object.id %}">Delete</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
